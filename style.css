@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    background-image: url('./img/plant.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#cardboard{
+    width: 600px;
+    height: 600px;
+    margin: auto ;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.memory-card{
+    width: calc(25% - 10px);
+    height: calc(33% - 10px);
+    margin: 5px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 0.8s;
+}
+
+.memory-card:active{
+    transform: scale(0.97);
+}
+
+.memory-card.flip{
+    transform: rotateY(180deg);
+}
+
+.memory-card:hover{
+    box-shadow: 0 0 13px rgb(51, 51, 51);
+}
+
+.front-face, .back-face{
+    background: rgb(240, 20, 57);
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front-face{
+    transform: rotateY(180deg);
+}
